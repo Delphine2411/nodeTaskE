@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 const PORT = 8080;
 
 // Middleware
@@ -9,7 +8,9 @@ app.use(express.json()) ;
 // Stockage en mémoire
 let tasks = [];
 let idUser = 1;
-
+app.get("/", (req, res)=>{
+    res.send(`Bievenue sur 1\`API Parakou vibes ! `)
+});
 // Création d'une tâche
 app.post("/tasks", (req, res) => {
     const { title } = req.body;
